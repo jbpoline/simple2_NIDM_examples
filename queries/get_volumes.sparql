@@ -17,6 +17,7 @@ prefix hasDatumType: <http://uri.interlex.org/ilx_0738262#>
 prefix hasUnit: <http://uri.interlex.org/base/ilx_0112181#>
 prefix hasLaterality: <http://uri.interlex.org/ilx_0381387#>
 prefix hasMeasurementType: <http://uri.interlex.org/ilx_0381388#>
+prefix hasUnit: <http://uri.interlex.org/base/ilx_0112181#>
 prefix isAbout: <http://uri.interlex.org/ilx_0381385#>
 prefix isMeasureOf: <http://uri.interlex.org/ilx_0381389#>
 prefix measurement_datum: <http://uri.interlex.org/base/ilx_0738269#>
@@ -47,6 +48,7 @@ prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 prefix ilx: <http://uri.interlex.org/base/ilx_>
 
 SELECT DISTINCT ?study ?ID ?Age ?Gender ?dx ?fiq ?piq ?hand ?latera ?value ?tool ?structure
+
 WHERE
 {
    ?e a onli:assessment-instrument;
@@ -78,4 +80,6 @@ WHERE
            hasLaterality: ?latera;
            hasUnit: "mm^3" ;
            hasDatumType: ?datum_uri .
+
+  #FILTER (?structure = <http://purl.obolibrary.org/obo/UBERON_0001873>) .
 }
