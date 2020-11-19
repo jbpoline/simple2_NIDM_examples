@@ -6,6 +6,8 @@
 
  `docker run --name blazegraph --rm -d -p 8889:8080 lyrasis/blazegraph:2.1.5`
 
+which will be running on http://localhost:8889/
+
 2. to upload all the turtle files, from the root of this repo do:
 
 ```
